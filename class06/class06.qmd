@@ -1,0 +1,227 @@
+---
+title: "Class06: R Functions"
+author: "Jervic Aquino (PID:A17756721)"
+date: "1/23/2026"
+format: pdf
+toc: TRUE
+---
+
+## Background
+
+Function are at the heart of using R. Everything we do involves calling using functions (from data input, analysis to results output). 
+
+All functions in R have at least three things:
+
+1. A **name**: the thing we use to call the function
+2. One or more input **arguments** that are comma separated
+3. The **body**: lines of code between curly brackets { } that does the work of the function
+
+## A first function
+
+
+Let's write a function that adds some numbers:
+```{r}
+add <- function(x) {
+  x + 1
+}
+```
+
+
+Let's try it out:
+```{r}
+add(100)
+```
+
+
+Will this work?
+```{r}
+add(c(100, 200, 300))
+```
+
+
+Modify to be more useful and add more than just 1
+```{r}
+add <- function(x, y=1) {
+  x + y
+}
+```
+
+
+```{r}
+add(100, 10)
+```
+
+
+Will this still work?
+```{r}
+add(100)
+```
+No, because there is no y-component. We have to set y equal to value if adding only one argument or component in the created function. 
+
+
+How to argue: 
+```{r}
+plot(1:10, col="blue", typ="b")
+```
+
+```{r}
+log(10, base=10)
+```
+
+
+> **N.B.** Input arguments can be either **required** or **optional**. The latter have a fall-back default that is specified in the function code with an equals sign. 
+
+
+```{r}
+#add(100, 200, 300)
+```
+
+
+## A second function
+
+All functions in R look like this
+
+```
+name <- function(arg) {
+  body
+}
+```
+
+The `sample()` function in R generates random numbers from the range of numbers given. It randomly picks items from the vector inputted. 
+
+```{r}
+sample(1:10, size=4)
+```
+
+> Q. Return 12 numbers picked randomly from the input 1:10
+
+```{r}
+sample(1:10, size=12, replace=TRUE)
+```
+
+
+> Q. Write the code to generate a random 12 nucleotide long DNA sequence 
+
+```{r}
+sample(c("a", "c", "g", "t"), size=12, replace=TRUE)
+```
+
+Another way to write the code:
+```{r}
+bases <- c("A", "T", "G", "C")
+sample(bases, size=12, replace=TRUE)
+```
+
+
+> Q. Write a first version function called `generate_dna()` that generates a user specified length `n`, random DNA sequence
+
+```{r}
+n <- sample(c(4:30), size=1)
+generate_dna <- sample(bases, size = n, replace = TRUE)
+generate_dna
+```
+
+```{r}
+generate_dna <- function(n=6) {
+  bases <- c("A", "T", "G", "C") 
+  sample(bases, size=n, replace=TRUE)
+}
+```
+
+```{r}
+generate_dna(100)
+```
+
+
+> Q. Modify your function to return a FASTA-like sequence so rather than [10] "G" "C" "A" "A" "T" we want "GCAAT" 
+
+```{r}
+generate_dna <- function(n=6) {
+  bases <- c("A", "T", "G", "C") 
+  sequence <- sample(bases, size=n, replace=TRUE)
+  sequence <- paste(sequence, collapse="")
+  return(sequence)
+}
+```
+
+```{r}
+generate_dna(10)
+```
+
+
+> Q. Give the user an option to return FASTA format output sequence or standard multi-element vector format
+
+```{r}
+generate_dna <- function(n=6, fasta=TRUE) {
+  bases <- c("A", "T", "G", "C") 
+  sequence <- sample(bases, size=n, replace=TRUE)
+  
+  if(fasta) {
+  sequence <- paste(sequence, collapse="")
+  cat("Hello...")
+  } else {
+    cat("is it me you're looking for...")
+  }
+  
+  return(sequence)
+}  
+```
+
+```{r}
+generate_dna(10)
+```
+```{r}
+generate_dna(10, fasta = FALSE)
+```
+
+
+
+## A new cool function
+
+> Q. Write a function called `generate_protein()` that generates a user specific length protein sequence in FASTA format
+
+```{r}
+generate_protein <- function(n) {
+  aa <- sample(c("A","R","N","D","C","Q","E","G","H",
+        "I","L","K","M","F","P","S","T","W","Y","V"), size=n, replace=TRUE)
+  protein <- paste(aa, collapse="")
+  return(protein)
+}
+```
+
+```{r}
+generate_protein(10)
+```
+
+
+> Q. Use your new `generate_protein()` function to generate sequences between length 6 and 12 amino acids in length and check if any of these are unique in nature (i.e. found in the NR database at NCBI)
+
+```{r}
+generate_protein <- function(n) {
+  aa <- sample(c("A","R","N","D","C","Q","E","G","H",
+        "I","L","K","M","F","P","S","T","W","Y","V"), size=n, replace=TRUE)
+  protein <- paste(aa, collapse="")
+  return(protein)
+}
+```
+
+```{r}
+generate_protein(6)
+generate_protein(7)
+generate_protein(8)
+generate_protein(9)
+generate_protein(10)
+generate_protein(11)
+generate_protein(12)
+```
+
+Or we could do a `for()` loop:
+
+```{r}
+for(i in 6:12) {
+  cat(">", i, sep="", "\n" )
+  cat(generate_protein(i), "\n")
+}
+```
+
+
