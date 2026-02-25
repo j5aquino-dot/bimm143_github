@@ -1,0 +1,260 @@
+---
+title: "Class07: Maching Learning 1"
+author: "Jervic Aquino (PID:A17756721)"
+date: 1-28-2026
+toc: TRUE
+format: pdf
+---
+
+## Background 
+Today we will begin our exploration of some important machine learning methods, namely **clustering** and **dimensionality reduction**.
+
+Let's make up some input data for clustering where we known what the natural "clusters" are.
+
+The function `rnorm()` can be useful here
+
+```{r}
+hist(rnorm(5000))
+```
+
+
+> Q. Generate 30 random numbers centered at +3 and another 30 centered at -3
+
+```{r}
+temp <- c(rnorm(30, mean= 3),
+          rnorm(30, mean= -3) )
+
+x <- cbind(x=temp, y=rev(temp))
+plot(x)
+```
+
+
+
+## Kmeans clustering 
+
+K = how many clusters you want from your data 
+The main function in "base R" for Kmean clustering is called `kmeans()`:
+
+```{r}
+km <- kmeans(x, 2)
+km
+```
+
+> Q. What component of the results object details the cluster sizes 
+
+```{r}
+km$size 
+```
+
+> Q. What component of the results object details the cluster centers (centroid)?
+
+```{r}
+km$centers
+```
+
+> Q. What component of the results object details the cluster membership vector (i.e. our main result of which points lie in which cluster) ?
+
+```{r}
+km$cluster
+```
+
+
+> Q. Plot our clustering results with points colored by cluster and also add the cluster centers as new points colored blue
+
+```{r}
+plot(x, col=km$cluster)
+points(km$centers, col="blue", pch=15)
+```
+
+
+> Q. Run `kmeans()` again and this time produce four clusters (and call your result object `k4`) and make a results figure like above
+
+```{r}
+k4 <- kmeans(x, 4)
+k4
+plot(x, col=k4$cluster)
+points(k4$centers, col="blue", pch=15)
+```
+
+
+The metric 
+```{r}
+km$tot.withinss
+k4$tot.withinss
+```
+
+
+> Q. Let's try different number of K (centers) from 1 to 30 and see what the best result is?
+
+```{r}
+ans <- NULL
+for(i in 1:30){
+ans <- c(ans, kmeans(x, centers=i)$tot.withinss)
+}
+
+ans
+```
+
+```{r}
+plot(ans, typ="o")
+```
+
+**Key point:** Kmeans will impose a clustering structure on data even if it isn't there - it will always give an answer even if answer can't be used
+
+
+## Hierarchical Clustering 
+
+The main function for hierarchical clustering is called `hclust()`. Unlike `kmeans()` (which does all the work for you) you can't just pass `hclust()` our raw input data. It needs a "distance matrix" like the one returned from the `dist()` function. 
+
+```{r}
+d <- dist(x)
+hc <- hclust(d)
+plot(hc)
+```
+
+
+To extract our cluster membership vector from a `hclust()` result object, we have to "cut" our tree at a given height to yield separate "groups"/"branches". 
+
+```{r}
+plot(hc)
+abline(h=8, col="red", lty=2)
+```
+
+
+To do this, we use the `cutree()` function on our `hclust()` object:
+
+```{r}
+grps <- cutree(hc, h=8)
+grps 
+```
+
+```{r}
+table(grps, km$cluster)
+```
+
+
+
+## PCA of UK Food Data 
+
+Import the data set on Food Consumption in the UK
+
+```{r}
+url <- "https://tinyurl.com/UK-foods"
+x <- read.csv(url)
+x
+```
+
+> Q1. How many rows and columns are in your new data frame named x? What R functions could you use to answer this questions?
+
+```{r}
+dim(x)
+```
+
+
+One solution to set the row names is to do it by hand
+
+```{r}
+rownames(x) <- x[,1]
+```
+
+To remove the first column, we can use the minus index trick
+```{r}
+x <- x[,-1]
+```
+
+A problem with this is that it deletes a column every time the code is ran because the function is overriding itself. 
+
+
+A better way to do this is to set the row names to the first column with `read.csv()`
+
+```{r}
+x <- read.csv(url, row.names=1)
+x
+```
+
+> Q2. Which approach to solving the ‘row-names problem’ mentioned above do you prefer and why? Is one approach more robust than another under certain circumstances?
+
+The second approach is more preferable because the code doesn't override itself when it gets ran again. 
+
+
+### Spotting the major differences and trends
+
+It is difficult even in this 17D data set...
+
+```{r}
+barplot(as.matrix(x), beside=T, col=rainbow(nrow(x)))
+```
+
+
+>Q3: Changing what optional argument in the above barplot() function results in the following plot?
+
+We would change `beside=T` to `beside=F` to go from a side by side to stacked plot
+
+```{r}
+barplot(as.matrix(x), beside=F, col=rainbow(nrow(x)))
+```
+
+
+## Pairs Plots and Heatmaps
+
+```{r}
+pairs(x, col=rainbow(nrow(x)), pch=16) 
+```
+
+
+> Q5: We can use the pairs() function to generate all pairwise plots for our countries. Can you make sense of the following code and resulting figure? What does it mean if a given point lies on the diagonal for a given plot?
+
+It plots each country against each other. Points on the diagonal means they have the same value. If they are off the diagonal then they are different values. If the point above the diagonal then the y-axis category is higher than the x-axis category, and if below the diagonal then the x-axis is higher than the y-axis. The problem with this plot is that it doesn't scale well. 
+
+
+```{r}
+library(pheatmap)
+pheatmap( as.matrix(x) )
+```
+
+
+## PCA to the Rescue 
+
+The main PCA function in "base R" is called `prcomp()`. This function wants the transpose of the food data as input (i.e. the foods as columns and the countries as rows). 
+
+
+```{r}
+pca <- prcomp(t(x))
+```
+
+```{r}
+summary(pca)
+```
+
+```{r}
+attributes(pca)
+```
+
+
+To make one of the main PCA result figures, we turn to `pca$x` the scores along our new PCs. This is called "PC plot" or "score plot" or "Ordination plot".
+
+```{r}
+pca$x
+```
+
+```{r}
+my_cols <- c("orange", "red","blue", "darkgreen")
+```
+
+
+```{r}
+library(ggplot2)
+ggplot(pca$x) + aes(PC1, PC2) + geom_point(col=my_cols)
+
+```
+
+
+The second major result figure is called a "loadings plot" of "variable contributions plot" or "weight plot"
+
+```{r}
+ggplot(pca$rotation) +
+  aes(PC1, rownames(pca$rotation)) + 
+  geom_col()
+```
+
+
