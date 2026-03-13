@@ -7,7 +7,7 @@ Class 04 [R Fundamentals](class04/class04.html)
 
 Class 05 [Data Visualization with ggplot](class05/class05.md)
 
-Class 06 [Writing Own R Functions](class06/class06.html)
+Class 06 [Writing Own R Functions](class06/class06.md)
 
 Class 07 [Intro to Machine Learning](class07/class07.html)
 
