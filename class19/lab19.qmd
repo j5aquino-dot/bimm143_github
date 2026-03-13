@@ -1,0 +1,32 @@
+---
+title: "Untitled"
+format: html
+---
+
+```{r}
+library(bio3d)
+```
+
+
+```{r}
+a <- read.fasta("A17756721_mutant_seq.fa")
+```
+
+```{r}
+conserv(a)
+which(conserv(a) != 1)
+```
+
+```{r}
+a$ali[,579]
+a$ali[,583]
+a$ali[,674]
+a$ali[,730]
+```
+
+
+
+```{r}
+a
+```
+

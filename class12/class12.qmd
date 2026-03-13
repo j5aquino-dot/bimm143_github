@@ -1,0 +1,75 @@
+---
+title: "Class 12: Lab  and HW Q13/14"
+author: "Jervic Aquino (PID:A17756721)"
+date: 02-12-2026
+toc: TRUE
+format: pdf
+---
+
+## Lab Section 1 Work
+
+Download then read the CSV file from Ensemble
+
+
+```{r}
+data <- read.csv("373531-SampleGenotypes-Homo_sapiens_Variation_Sample_rs8067378.csv")
+head(data)
+```
+
+```{r}
+table(data$Genotype..forward.strand.)
+```
+
+```{r}
+table(data$Genotype..forward.strand.) / nrow(data)
+```
+
+## Section 4 HW
+
+How many samples do we have ?
+
+```{r}
+expr <- read.table("rs8067378_ENSG00000172057.6.txt")
+head(expr)
+```
+
+```{r}
+nrow(expr)
+```
+
+
+> Q13. Read this file into R and determine the sample size for each genotype and their
+corresponding median expression levels for each of these genotypes
+
+- Sample size: 
+
+```{r}
+table(expr$geno)
+```
+
+
+```{r}
+median <- boxplot(exp ~ geno, expr)
+
+print(median)
+```
+
+- Corresponding median expression levels:
+
+```{r}
+print(paste(median$names, median$stats[3,]))
+```
+
+
+> Q14: Generate a boxplot with a box per genotype, what could you infer from the relative expression value between A/A and G/G displayed in this plot? Does the SNP effect the
+expression of ORMDL3?
+
+```{r}
+library(ggplot2)
+
+ggplot(expr) + 
+  aes(x=geno, y=exp) + 
+  geom_boxplot()
+```
+
+- It can inferred that the A/A genotype causes higher levels of expression than the G/G genotype. The SNP effect does effect the expression of ORMDL3, in which ORMDL3 has an expression level in between A/A and G/G. This may be because having an A allows for expression higher than G/G but being accompanied by G results in expression less than A/A. 
