@@ -2,6 +2,17 @@
 The following are PDF files of my classwork from [BIMM 143](https://bioboot.github.io/bimm143_W26/) at UC San Diego WI26. BIMM 143 was a lecture/lab course offered to upper-division standing biology majors who were introduced to the principles of Bioinformatics in relation to R language, genes, and proteins. [Course completion certificates](DataCampCertifAquino.pdf) were received from DataCamp to gain additional basic knowledge in using R language. The course also briefly touched on terminal linux programming and the usage basic commands: "ls", "mv", "mkdir", and "cd." 
 
 ## Index of Material 
+**Class 01** [Introduction to Bioinformatics](BIMM143lab01_Aquino.pdf)
+
+An introduction to BLAST, NCBI databases (GenBank, GENE, RefSeq, and OMIM), multiple sequence alignment, and 3D protein structure visualization. 
+
+**Class 02** [Sequence Alignment Fundamentals, Algorithms, and Applications](BIMM143lab02_Aquino.pdf)
+
+An introduction to plot parameters, pairwise sequence alignment, scoring matrix and a practice in using BLAST. 
+
+**Class 03** [Advanced Sequence Alignment and Database Searching](BIMMlab03_Aquino.pdf)
+
+A deeper practice in using BLAST, position-specific scoring matrices, and multiple sequence alignments. 
   
 **Class 04** [R Fundamentals](class04/class04.html)
 
