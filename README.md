@@ -33,7 +33,7 @@ An introduction to the Protein Data Bank, Molestar, and the ```bio3d``` and ```b
 
 **Class 11** [AlphaFold](class11/class11.html)
 
-An introduction to AlphaFold and "Cloud Computing"
+An introduction to AlphaFold and "Cloud Computing".
 
 **Class 12** [Genome Informatics](class12/class12.html)
 
@@ -41,9 +41,17 @@ A practice in using genome databased and genomic data sets to create plots and i
 
 **Class 13** [Transcriptomics](class13/class13.html)
 
+A introduction in RNASeq analysis using the ```DESeq2``` package and an introduction in pathway analysis using the ```gage``` and ```pathview``` packages. 
+
 **Class 14** [RNA-Seq Mini-Project](class14/class14.html)
+
+A practice in RNASeq analysis and pathway analysis on data on a HOX gene. 
 
 **Class 17** [Analyzing Seq Data using AWS Cloud](class17/class17.html)
 
+A practice in using AWS EC2 for sequence data analysis. 
+
 **Class 18** [Pertussis Resurgence Mini-Project](class18/class18.html)
+
+A practice in data visualization and analysis on a data set pertaining to Pertussis. 
 
