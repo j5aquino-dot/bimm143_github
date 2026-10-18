@@ -9,7 +9,7 @@ An introduction to the RStudio console and Rmarkdown documents.
 
 **Class 05** [Data Visualization with ggplot](class05/class05.html)
 
-An introduction to ggplot and data visualization practices in using simple graphics. 
+An introduction to ```ggplot()``` and data visualization practices in using simple graphics. 
 
 **Class 06** [Writing Own R Functions](class06/class06.html)
 
@@ -17,15 +17,27 @@ A practice in writing R functions to ```generate_dna()``` and ```generate_protei
 
 **Class 07** [Intro to Machine Learning](class07/class07.html)
 
+An introduction to Kmeans Clustering, Hierarchical Clustering, Principal Component Analysis, Pair Plots, and Heatmaps.
+
 **Class 08** [Cancer Cell Mini Project](class08/class08.html)
+
+A practice in using previously introduced Machine Learning techniques and R language techniques to analyze breast cancer biopsy data.
 
 **Class 09** [Candy Mini Project](class09/class09.html)
 
+A practice in using previously learn analysis methods and an introduction to the following R language packages and functions to analyze a data set on candy:  ```dplyr```, ```skmir```, ```ggprel```, ```corrplot```, and ```prcomp()```.
+
 **Class 10** [Structural Bioinformatics](class10/class10.html)
+
+An introduction to the Protein Data Bank, Molestar, and the ```bio3d``` and ```bio3dview``` packages to visualize and analyze protein structure data. 
 
 **Class 11** [AlphaFold](class11/class11.html)
 
+An introduction to AlphaFold and "Cloud Computing"
+
 **Class 12** [Genome Informatics](class12/class12.html)
+
+A practice in using genome databased and genomic data sets to create plots and inferences. 
 
 **Class 13** [Transcriptomics](class13/class13.html)
 
