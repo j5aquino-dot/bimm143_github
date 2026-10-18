@@ -1,5 +1,5 @@
 # BIMM143
-The following are PDF files of my classwork from [BIMM 143](https://bioboot.github.io/bimm143_W26/) at UC San Diego WI26. BIMM 143 is a lecture/lab course offered to upper-division standing biology majors who will be introduced to the principles of Bioinformatics in relation to R language, genes, and proteins.  
+The following are PDF files of my classwork from [BIMM 143](https://bioboot.github.io/bimm143_W26/) at UC San Diego WI26. BIMM 143 was a lecture/lab course offered to upper-division standing biology majors who were introduced to the principles of Bioinformatics in relation to R language, genes, and proteins. [Course completion certificates](DataCampCertifAquino.pdf) were received from DataCamp to gain additional basic knowledge in using R language. The course also briefly touched on terminal linux programming and the usage basic commands: "ls", "mv", "mkdir", and "cd." 
 
 ## Index of Material 
   
