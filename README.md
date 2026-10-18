@@ -3,7 +3,7 @@ The following are PDF files of my classwork from [BIMM 143](https://bioboot.gith
 
 ## Final Project
 The following is a Find-A-Gene project that acted as the final for the course based on a novel protein found using BLAST. Using methods learned throughout the course, multiple sequence alignments, a phylogenetic tree, a heatmap, and a 3D protein visual were created while also briefly discussing the druggability of the novel protein. 
-[](Find_A_Gene_Project_Aquino.pdf)
+(Find_A_Gene_Project_Aquino.pdf)
 
 
 ## Index of Material 
