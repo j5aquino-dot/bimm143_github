@@ -1,5 +1,5 @@
 # BIMM143
-My classwork from [BIMM 143](https://bioboot.github.io/bimm143_W26/) at UC San Diego WI26
+The following are PDF files of my classwork from [BIMM 143](https://bioboot.github.io/bimm143_W26/) at UC San Diego WI26. BIMM 143 is a lecture/lab course offered to upper-division standing biology majors who will be introduced to the principles of Bioinformatics in relation to R language, genes, and proteins.  
 
 ## Index of Material 
   
