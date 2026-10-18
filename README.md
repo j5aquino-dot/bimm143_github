@@ -10,7 +10,7 @@ Class 05 [Data Visualization with ggplot](class05/class05.html)
 An introduction to ggplot and data visualization practices in using simple graphics. 
 
 Class 06 [Writing Own R Functions](class06/class06.html)
-A practice in writing R functions to {generate_dna()} and {generate_protein()}.  
+A practice in writing R functions to ```generate_dna()``` and ```generate_protein()```.  
 
 Class 07 [Intro to Machine Learning](class07/class07.html)
 
