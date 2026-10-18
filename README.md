@@ -10,7 +10,7 @@ An introduction to BLAST, NCBI databases (GenBank, GENE, RefSeq, and OMIM), mult
 
 An introduction to plot parameters, pairwise sequence alignment, scoring matrix and a practice in using BLAST. 
 
-**Class 03** [Advanced Sequence Alignment and Database Searching](BIMMlab03_Aquino.pdf)
+**Class 03** [Advanced Sequence Alignment and Database Searching](BIMM143lab03_Aquino.pdf)
 
 A deeper practice in using BLAST, position-specific scoring matrices, and multiple sequence alignments. 
   
