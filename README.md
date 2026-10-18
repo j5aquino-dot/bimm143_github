@@ -6,7 +6,7 @@ The following are PDF files of my classwork from [BIMM 143](https://bioboot.gith
 
 An introduction to BLAST, NCBI databases (GenBank, GENE, RefSeq, and OMIM), multiple sequence alignment, and 3D protein structure visualization. 
 
-**Class 02** [Sequence Alignment Fundamentals, Algorithms, and Applications](BIMM143lab02_Aquino.pdf)
+**Class 02** [Sequence Alignment Fundamentals, Algorithms, and Applications](BIMM143lab02_Aquino(1).pdf)
 
 An introduction to plot parameters, pairwise sequence alignment, scoring matrix and a practice in using BLAST. 
 
