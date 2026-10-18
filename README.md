@@ -4,12 +4,15 @@ The following are PDF files of my classwork from [BIMM 143](https://bioboot.gith
 ## Index of Material 
   
 Class 04 [R Fundamentals](class04/class04.html)
+
 An introduction to the RStudio console and Rmarkdown documents.
 
 Class 05 [Data Visualization with ggplot](class05/class05.html)
+
 An introduction to ggplot and data visualization practices in using simple graphics. 
 
 Class 06 [Writing Own R Functions](class06/class06.html)
+
 A practice in writing R functions to ```generate_dna()``` and ```generate_protein()```.  
 
 Class 07 [Intro to Machine Learning](class07/class07.html)
