@@ -16,10 +16,6 @@ An introduction to plot parameters, pairwise sequence alignment, scoring matrix 
 **Class 03** [Advanced Sequence Alignment and Database Searching](BIMM143lab03_Aquino.pdf)
 
 A deeper practice in using BLAST, position-specific scoring matrices, and multiple sequence alignments. 
-  
-**Class 04** [R Fundamentals](class04/class04.html)
-
-An introduction to the RStudio console and Rmarkdown documents.
 
 **Class 05** [Data Visualization with ggplot](class05/class05.html)
 
@@ -44,10 +40,6 @@ A practice in using previously learn analysis methods and an introduction to the
 **Class 10** [Structural Bioinformatics](class10/class10.html)
 
 An introduction to the Protein Data Bank, Molestar, and the ```bio3d``` and ```bio3dview``` packages to visualize and analyze protein structure data. 
-
-**Class 11** [AlphaFold](class11/class11.html)
-
-An introduction to AlphaFold and "Cloud Computing".
 
 **Class 12** [Genome Informatics](class12/class12.html)
 
